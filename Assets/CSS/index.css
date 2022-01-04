@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+strong{
+  color: #f961b8;
+}
+::selection {
+  color: white;
+  background: rgb(245, 88, 166);
+}
+img {
+  user-select: none;
+}
+button {
+  user-select: none;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    to top,
+    rgb(248, 4, 126) 0%,
+    rgb(250, 198, 247) 100%
+  );
+}
+.playBoard , .select-Box , .result{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.select-Box{
+  background: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  max-width: 360px;
+  width: 100%;
+  transition: all 0.3s ease;
+  /* display: none; */
+}
+.select-Box.hide{
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.select-Box header{
+  pointer-events: none;
+  font-size: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.select-Box .title{
+  font-size: 20px;
+  margin: 1.5rem 0;
+}
+.select-Box .options{
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.options button{
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  padding: 0.5rem 0;
+  background-color: #f961b8;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.options button:hover{
+  transform: scale(0.94);
+}
+.playboard{
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.playboard.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.playboard .details{
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+}
+.playboard .details .players{
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-content: space-around;
+}
+.playboard .details .players span{
+  width: 100%;
+  color:#f961b8;
+  border-radius: 5px;
+  padding: 8px;
+  text-align: center;
+  z-index: 2;
+}
+.playboard .details .players .active{
+  color: #fff;
+  z-index: 2;
+}
+.playboard .details .players .slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 50%;
+  background-color: #f961b8;
+  border-radius: 5px;
+  z-index: 1;
+}
+.playArea{
+  display: grid;
+  grid-template-rows: repeat(3 , 13vh);
+  grid-template-columns: repeat(3 , 13vh);
+  margin: 1rem 0;
+  row-gap: 5px;
+  column-gap: 5px;
+}
+.playArea div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 40px;
+  color: #f961b8;
+}
+.result{
+  background: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  max-width: 320px;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+.result.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.result .wonText{
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.result button{
+  width: 50%;
+  display: block;
+  margin: 1rem auto;
+  font-size: 18px;
+  border: none;
+  padding: 0.5rem 0;
+  background-color: #f961b8;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.result button:hover{
+  transform: scale(0.94);
+}
